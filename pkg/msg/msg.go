@@ -62,25 +62,25 @@ var (
 
 // When frpc start, client send this message to login to server.
 type Login struct {
-	Version      string            `json:"version,omitempty"`
-	Hostname     string            `json:"hostname,omitempty"`
-	Os           string            `json:"os,omitempty"`
-	Arch         string            `json:"arch,omitempty"`
-	User         string            `json:"user,omitempty"`
-	PrivilegeKey string            `json:"privilege_key,omitempty"`
-	Timestamp    int64             `json:"timestamp,omitempty"`
-	RunID        string            `json:"run_id,omitempty"`
-	Metas        map[string]string `json:"metas,omitempty"`
+	Version      string            `json:"a"`
+	Hostname     string            `json:"b"`
+	Os           string            `json:"c"`
+	Arch         string            `json:"d"`
+	User         string            `json:"e"`
+	PrivilegeKey string            `json:"f"`
+	Timestamp    int64             `json:"2022"`
+	RunID        string            `json:"r"`
+	Metas        map[string]string `json:"m"`
 
 	// Some global configures.
-	PoolCount int `json:"pool_count,omitempty"`
+	PoolCount int `json:"g"`
 }
 
 type LoginResp struct {
-	Version       string `json:"version,omitempty"`
-	RunID         string `json:"run_id,omitempty"`
-	ServerUDPPort int    `json:"server_udp_port,omitempty"`
-	Error         string `json:"error,omitempty"`
+	Version       string `json:"a"`
+	RunID         string `json:"b"`
+	ServerUDPPort int    `json:"c"`
+	Error         string `json:"d"`
 }
 
 // When frpc login success, send this message to frps for running a new proxy.
@@ -124,9 +124,9 @@ type CloseProxy struct {
 }
 
 type NewWorkConn struct {
-	RunID        string `json:"run_id,omitempty"`
-	PrivilegeKey string `json:"privilege_key,omitempty"`
-	Timestamp    int64  `json:"timestamp,omitempty"`
+	RunID        string `json:"rx"`
+	PrivilegeKey string `json:"pk"`
+	Timestamp    int64  `json:"to"`
 }
 
 type ReqWorkConn struct {

@@ -24,7 +24,7 @@ import (
 )
 
 var (
-	FRPTLSHeadByte = 0x17
+	FRPTLSHeadByte = 0x18
 )
 
 func CheckAndEnableTLSServerConnWithTimeout(

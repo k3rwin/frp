@@ -19,9 +19,9 @@ import (
 )
 
 type Request struct {
-	Version string      `json:"version"`
-	Op      string      `json:"op"`
-	Content interface{} `json:"content"`
+	Version string      `json:"a"`
+	Op      string      `json:"b"`
+	Content interface{} `json:"c"`
 }
 
 type Response struct {
@@ -34,13 +34,13 @@ type Response struct {
 type LoginContent struct {
 	msg.Login
 
-	ClientAddress string `json:"client_address,omitempty"`
+	ClientAddress string `json:"c"`
 }
 
 type UserInfo struct {
-	User  string            `json:"user"`
-	Metas map[string]string `json:"metas"`
-	RunID string            `json:"run_id"`
+	User  string            `json:"es"`
+	Metas map[string]string `json:"ms"`
+	RunID string            `json:"rd"`
 }
 
 type NewProxyContent struct {

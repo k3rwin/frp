@@ -30,7 +30,7 @@ import (
 	"github.com/fatedier/frp/pkg/msg"
 	plugin "github.com/fatedier/frp/pkg/plugin/server"
 	"github.com/fatedier/frp/pkg/util/util"
-	"github.com/fatedier/frp/pkg/util/version"
+	// "github.com/fatedier/frp/pkg/util/version"
 	"github.com/fatedier/frp/pkg/util/xlog"
 	"github.com/fatedier/frp/server/controller"
 	"github.com/fatedier/frp/server/metrics"
@@ -188,7 +188,7 @@ func NewControl(
 // Start send a login success message to client and start working.
 func (ctl *Control) Start() {
 	loginRespMsg := &msg.LoginResp{
-		Version:       version.Full(),
+		Version:       "0",
 		RunID:         ctl.runID,
 		ServerUDPPort: ctl.serverCfg.BindUDPPort,
 		Error:         "",

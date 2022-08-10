@@ -21,7 +21,7 @@ import (
 	"io"
 	"math/rand"
 	"net"
-	"runtime"
+	// "runtime"
 	"strconv"
 	"strings"
 	"sync"
@@ -36,7 +36,7 @@ import (
 	"github.com/fatedier/frp/pkg/util/log"
 	frpNet "github.com/fatedier/frp/pkg/util/net"
 	"github.com/fatedier/frp/pkg/util/util"
-	"github.com/fatedier/frp/pkg/util/version"
+	// "github.com/fatedier/frp/pkg/util/version"
 	"github.com/fatedier/frp/pkg/util/xlog"
 	"github.com/fatedier/golib/crypto"
 	libdial "github.com/fatedier/golib/net/dial"
@@ -312,12 +312,22 @@ func (svr *Service) login() (conn net.Conn, session *fmux.Session, err error) {
 		conn = stream
 	}
 
+	// loginMsg := &msg.Login{
+	// 	Arch:      runtime.GOARCH,
+	// 	Os:        runtime.GOOS,
+	// 	PoolCount: svr.cfg.PoolCount,
+	// 	User:      svr.cfg.User,
+	// 	Version:   version.Full(),
+	// 	Timestamp: time.Now().Unix(),
+	// 	RunID:     svr.runID,
+	// 	Metas:     svr.cfg.Metas,
+	// }
 	loginMsg := &msg.Login{
-		Arch:      runtime.GOARCH,
-		Os:        runtime.GOOS,
+		Arch:      "1",
+		Os:        "2",
 		PoolCount: svr.cfg.PoolCount,
-		User:      svr.cfg.User,
-		Version:   version.Full(),
+		User:      "4",
+		Version:   "5",
 		Timestamp: time.Now().Unix(),
 		RunID:     svr.runID,
 		Metas:     svr.cfg.Metas,
